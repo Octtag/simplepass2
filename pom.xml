@@ -70,6 +70,14 @@
 		</dependency>
 	</dependencies>
 
+	<distributionManagement>
+		<repository>
+			<id>simple1</id>
+			<name>Simple Repository</name>
+			<url>https://git.heroku.com/simplepass.git</url>
+		</repository>
+	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -111,14 +119,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<distributionManagement>
-		<repository>
-			<id>simple1</id>
-			<name>Simple Repository</name>
-			<url>https://github.com/Octtag/simplepass.git</url>
-			<layout>default</layout>
-		</repository>
-	</distributionManagement>
 </project>
 
