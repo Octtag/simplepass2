@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:8080/api/login';
+const apiUrl = 'http://localhost:8080/authenticate';
 
 window.addEventListener('load', function(){
     console.log("Entramos en el EventListener");
@@ -38,12 +38,13 @@ function validacionNoVacio(texto) {
     return resultado
 }
 
-function normalizacionLogin(username, password) {
-
+function normalizacionLogin(email, password) {
     const usuario = {
-        username: username.trim(),
+        email: email.trim(),
         password: password.trim()
+
     }
+
     return usuario;
 }
 

@@ -5,14 +5,14 @@ window.addEventListener('load', function () {
   const crearUsuario = async () => {
 
     const formData = {
-      username: formulario.querySelector('#username').value,
+      username: formulario.querySelector('#nombre').value,
       email: formulario.querySelector('#email').value,
       dni: formulario.querySelector('#dni').value,
       celular: formulario.querySelector('#celular').value,
       password: formulario.querySelector('#contraseña').value,
     };
 
-    const url = '/api/sign-up';
+    const url = '/usuarios/registrarUser';
     const settings = {
       method: 'POST',
       headers: {
