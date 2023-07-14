@@ -40,7 +40,7 @@ public class SimpleUserController {
     @PostMapping("/registrarUser")
     public ResponseEntity<?> registrarUsuario(@RequestBody SimpleUserDto simpleUserDto){
         if (simpleUserRepository.existsByEmail(simpleUserDto.getEmail())){
-            return new ResponseEntity<>("Este email ya esta en uso, inicia sesion con su cuenta", HttpStatus.BAD_REQUEST);
+            return new ResponseEntity<>("Este email ya esta en uso, inicia sesion con tu cuenta", HttpStatus.BAD_REQUEST);
         }
         SimpleUser usuario = new SimpleUser();
         usuario.setUsername(simpleUserDto.getUsername());
