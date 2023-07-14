@@ -1,1 +1,1 @@
-web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.simple.simplepass , run.8080
+web: java $JAVA_OPTS -cp target/classes:target/dependency/* com.simple.simplepass.SimplepassApplication , run.5000
