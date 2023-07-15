@@ -12,7 +12,7 @@ window.addEventListener('load', function () {
       password: formulario.querySelector('#contraseña').value,
     };
 
-    const url = '/usuarios/registrarUser';
+    const url = '/usuarios/registrarProductor';
     const settings = {
       method: 'POST',
       headers: {
@@ -38,7 +38,7 @@ window.addEventListener('load', function () {
         showConfirmButton: false,
         timer: 4000
       }).then(() => {
-        window.location.href = "/loginSimple.html"; // Redirige al usuario a la página de inicio de sesión
+        window.location.href = "/loginSimple.html";
       })
 
     ) : (
@@ -59,13 +59,11 @@ window.addEventListener('load', function () {
     const contraseñaConfirmada = formulario.querySelector('#contraseñaConfirmada').value;
     const resultadoBox = document.querySelector('#resultado');
 
-    clearErrorMessage(); // Limpia el mensaje de error antes de la validación
-
     if (contraseña === contraseñaConfirmada) {
 
       const data = await crearUsuario();
-      formulario.reset(); // Resetea el formulario después de la creación exitosa del usuario
-
+      clearErrorMessage();
+      formulario.reset();
     } else {
       // Las contraseñas no coinciden, mostrar mensaje de error
       document.getElementById("contraseña").style.borderColor = "red";
@@ -76,13 +74,10 @@ window.addEventListener('load', function () {
       mensajeError.innerHTML = "Las contraseñas no coinciden.";
       resultadoBox.appendChild(mensajeError); // Agregar el mensaje de error al formulario
     }
-  });
 
-  function clearErrorMessage() {
-    const mensajeError = document.getElementById("errorMessage");
-    if (mensajeError) {
+    function clearErrorMessage() {
+      const mensajeError = document.getElementById("errorMessage");
       mensajeError.remove(); // Eliminar el elemento de mensaje de error si existe
     }
-  }
+  });
 });
-

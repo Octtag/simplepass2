@@ -10,8 +10,8 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-  <link rel="stylesheet" href="../estilos/estilos.css">
-  <link rel="icon" type="image/png" href="../img/favicon.png">
+  <link rel="stylesheet" href="https://simplepaaas.000webhostapp.com/simplepass/src/main/resources/static/styles/styles.css">
+  <link rel="icon" type="image/png" href="https://simplepaaas.000webhostapp.com/simplepass/src/main/resources/static/img/favicon.png">
   <title>simple.pass</title>
 </head>
 
@@ -21,7 +21,7 @@
     <!--NAVBAR-->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
-        <a class="navbar-brand" href="../pages/index.html">
+        <a class="navbar-brand" href="#">
           <h1>simple<span>.pass</span></h1>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
@@ -31,35 +31,59 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="/loginSimple.html">Iniciar sesion</a>
+              <a class="nav-link active" aria-current="page" href="https://simplepaaas.000webhostapp.com/simplepass/src/main/resources/static/loginSimple.html">Iniciar sesion</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/signup.html">Crear cuenta</a>
+              <a class="nav-link" href="https://simplepaaas.000webhostapp.com/simplepass/src/main/resources/static/signup.html">Crear cuenta</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                Dropdown
+                Ver más
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="https://simplepaaas.000webhostapp.com/simplepass/src/main/resources/static/help.html">Centro de Ayuda</a></li>
                 <li><a class="dropdown-item" href="#">Another action</a></li>
                 <li>
                   <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <li><a class="dropdown-item" href="https://simplepaaas.000webhostapp.com/simplepass/src/main/resources/static/nosotros.html">Nosotros</a></li>
               </ul>
             </li>
           </ul>
           <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <input class="form-control me-2" type="search" placeholder="Buscá tu evento favorito..." aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Buscar</button>
           </form>
         </div>
       </div>
     </nav>
 
   </header>
+  
+  <!--CAROUSEL-->
+  
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="10000">
+      <img src="https://simplepaaas.000webhostapp.com/simplepass/src/main/resources/static/img/portada_detalle_evento.png"  class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="2000">
+      <img src="https://simplepaaas.000webhostapp.com/simplepass/src/main/resources/static/img/carousel-2.png" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://simplepaaas.000webhostapp.com/simplepass/src/main/resources/static/img/carousel-3.png" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
   <h5>Próximos eventos</h5>
 
@@ -67,8 +91,8 @@
 
     <!--card inicio-->
     <article class="card-evento">
-      <a href="./detalle_evento.html">
-        <img src="/img/Rectangle 20.png" alt=""><br></a>
+      <a href="https://simplepaaas.000webhostapp.com/simplepass/src/main/resources/static/detalle_evento.html">
+        <img src="https://simplepaaas.000webhostapp.com/simplepass/src/main/resources/static/img/Rectangle 20.png" alt=""><br></a>
       <div class="event-title">
         <h5>Carnavales Hasenkamp</h5>
       </div>
@@ -80,8 +104,8 @@
         <i class="fa-solid fa-location-dot"></i>
         <p><b>Centro Cultural Borges.</b>
       </div>
-      <div class="event-buy">
-        <i class="fa-solid fa-ticket"></i> <a href="./detalle_evento.html">Comprar Tickets</a>
+      <div class="sold-out">
+        <i class="fa-solid fa-ticket"></i> <a href="https://simplepaaas.000webhostapp.com/simplepass/src/main/resources/static/detalle_evento.html">Tickets agotados</a>
       </div>
       </div>
       </article>
@@ -89,8 +113,8 @@
 
             <!--card inicio-->
     <article class="card-evento">
-      <a href="./detalle_evento.html">
-        <img src="/img/Rectangle 20.png" alt=""><br></a>
+      <a href="https://simplepaaas.000webhostapp.com/simplepass/src/main/resources/static/detalle_evento.html">
+        <img src="https://simplepaaas.000webhostapp.com/simplepass/src/main/resources/static/img/Rectangle 20.png" alt=""><br></a>
       <div class="event-title">
         <h5>Carnavales Hasenkamp</h5>
       </div>
@@ -103,7 +127,7 @@
         <p><b>Centro Cultural Borges.</b>
       </div>
       <div class="event-buy">
-        <i class="fa-solid fa-ticket"></i> <a href="./detalle_evento.html">Comprar Tickets</a>
+        <i class="fa-solid fa-ticket"></i> <a href="https://simplepaaas.000webhostapp.com/simplepass/src/main/resources/static/detalle_evento.html">Comprar Tickets</a>
       </div>
       </div>
     </article>
@@ -111,13 +135,16 @@
   </section>
   </div>
 
-
+<div class="banner_publi">
+  <div class="banner_publi_title">¡Creá un evento inolvidable y compartilo con el mundo!</div><br>
+  <div class="banner_publi_description">Una nueva forma de vender entradas, <br> fácil y simple. ¡Probalo!</div>
+  <a id="HacerEvento" href="#">Creá tu evento ahora</a>
+</div>
 
   <footer>
     <article>
       <h1>simple.pass</h1>
-      <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repudiandae explicabo doloribus magni! Tempora
-        iure illo ex! Ipsum fuga perferendis quaerat.</p>
+      <p>Hacemos que la experiencia de compra de boletos para eventos sea simple, transparente y segura para todos, en todo momento.</p>
     </article>
     <article>
       <h4>Menú Head</h4>
@@ -125,7 +152,7 @@
         <li> <a href="#">FAQ</a></li>
         <li> <a href="#">Centro de Ayuda</a></li>
         <li> <a href="#">Mi Cuenta</a></li>
-        <li> <a href="#">Creá tu evento</a></li>
+        <li> <a href="/crearEvento.html">Creá tu evento</a></li>
       </ul>
     </article>
     <article>
@@ -159,4 +186,5 @@
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
 </body>
+
 </html>

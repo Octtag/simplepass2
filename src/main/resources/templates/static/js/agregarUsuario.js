@@ -5,14 +5,14 @@ window.addEventListener('load', function () {
   const crearUsuario = async () => {
 
     const formData = {
-      username: formulario.querySelector('#nombre').value,
+      username: formulario.querySelector('#username').value,
       email: formulario.querySelector('#email').value,
       dni: formulario.querySelector('#dni').value,
       celular: formulario.querySelector('#celular').value,
       password: formulario.querySelector('#contraseña').value,
     };
 
-    const url = '/usuarios/registrarUser';
+    const url = '/api/sign-up';
     const settings = {
       method: 'POST',
       headers: {
@@ -36,9 +36,7 @@ window.addEventListener('load', function () {
         icon: 'success',
         title: 'El usuario fue generado exitosamente',
         showConfirmButton: false,
-        timer: 4000
-      }).then(() => {
-        window.location.href = "/loginSimple.html"; // Redirige al usuario a la página de inicio de sesión
+        timer: 5000
       })
 
     ) : (
@@ -59,13 +57,17 @@ window.addEventListener('load', function () {
     const contraseñaConfirmada = formulario.querySelector('#contraseñaConfirmada').value;
     const resultadoBox = document.querySelector('#resultado');
 
-    clearErrorMessage(); // Limpia el mensaje de error antes de la validación
-
     if (contraseña === contraseñaConfirmada) {
 
       const data = await crearUsuario();
-      formulario.reset(); // Resetea el formulario después de la creación exitosa del usuario
-
+      clearErrorMessage();
+      formulario.reset();
+      if (data) {
+              setTimeout(() => {
+                window.location.replace('loginSimple.html');
+              }, 5000);
+            }
+         
     } else {
       // Las contraseñas no coinciden, mostrar mensaje de error
       document.getElementById("contraseña").style.borderColor = "red";
@@ -76,13 +78,10 @@ window.addEventListener('load', function () {
       mensajeError.innerHTML = "Las contraseñas no coinciden.";
       resultadoBox.appendChild(mensajeError); // Agregar el mensaje de error al formulario
     }
-  });
 
-  function clearErrorMessage() {
-    const mensajeError = document.getElementById("errorMessage");
-    if (mensajeError) {
+    function clearErrorMessage() {
+      const mensajeError = document.getElementById("errorMessage");
       mensajeError.remove(); // Eliminar el elemento de mensaje de error si existe
     }
-  }
+  });
 });
-

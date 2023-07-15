@@ -3,6 +3,7 @@ package com.simple.simplepass.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.simple.simplepass.dto.SimpleUserDto;
+import com.simple.simplepass.persistance.entities.SimpleProductor;
 import com.simple.simplepass.persistance.entities.SimpleUser;
 import com.simple.simplepass.persistance.entities.SimpleUserRol;
 import com.simple.simplepass.persistance.repository.SimpleUserRepository;
@@ -15,7 +16,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.view.RedirectView;
-
 import java.util.Date;
 
 @RestController
@@ -52,6 +52,23 @@ public class SimpleUserController {
 
         simpleUserRepository.save(usuario);
         return new ResponseEntity<>("Usuario registrado exitosamente", HttpStatus.OK);
+    }
+
+    @PostMapping("/registrarProductor")
+    public ResponseEntity<?> registrarProductor(@RequestBody SimpleProductor simpleProductor){
+        if (simpleUserRepository.existsByEmail(simpleProductor.getEmail())){
+            return new ResponseEntity<>("Este email ya esta en uso, inicia sesion con tu cuenta", HttpStatus.BAD_REQUEST);
+        }
+        SimpleUser usuario = new SimpleUser();
+        usuario.setUsername(simpleProductor.getUsername());
+        usuario.setEmail(simpleProductor.getEmail());
+        usuario.setDni(simpleProductor.getDni());
+        usuario.setCelular(simpleProductor.getCelular());
+        usuario.setPassword(passwordEncoder.bCryptPasswordEncoder().encode(simpleProductor.getPassword()));
+        usuario.setAppUserRole(SimpleUserRol.valueOf("ADMIN"));
+
+        simpleUserRepository.save(usuario);
+        return new ResponseEntity<>("Productor registrado exitosamente", HttpStatus.OK);
     }
 
     @PostMapping("/addUsuario")
