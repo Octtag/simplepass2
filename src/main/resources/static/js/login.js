@@ -1,4 +1,4 @@
-const apiUrl = 'http://localhost:8080/authenticate';
+const apiUrl = '/authenticate';
 
 window.addEventListener('load', function(){
     console.log("Entramos en el EventListener");
